@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sorry Dharshini ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Floating Hearts */
+.heart {
+  position: absolute;
+  color: rgba(255, 0, 76, 0.6);
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh); opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+.card {
+  background: rgba(255,255,255,0.95);
+  padding: 35px;
+  max-width: 460px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+  z-index: 10;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  color: #e63946;
+}
+
+.big-heart {
+  font-size: 55px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.3); }
+}
+
+.signature {
+  margin-top: 25px;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #555;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#yes {
+  background: #e63946;
+  color: white;
+}
+
+#no {
+  background: #aaa;
+  color: white;
+  position: absolute;
+}
+
+#message {
+  display: none;
+  margin-top: 20px;
+  color: #e63946;
+  font-size: 18px;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3">
+</audio>
+
+<div class="card">
+  <h1>Sorry Dharshini 🥺</h1>
+  <div class="big-heart">❤️</div>
+
+  <p>
+    I never wanted to hurt you.  
+    You mean everything to me, and I promise to love you better.
+  </p>
+
+  <div class="buttons">
+    <button id="yes" onclick="yesClick()">Yes 💖</button>
+    <button id="no" onmouseover="moveNo()">No 😤</button>
+  </div>
+
+  <div id="message">
+    Thank you for forgiving me ❤️  
+    You are my happiness 🌸
+  </div>
+
+  <div class="signature">
+    — With love,<br>
+    <strong>ABHINESH KAARTHIK M</strong>
+  </div>
+</div>
+
+<script>
+/* Floating hearts */
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 15 + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}, 300);
+
+/* No button runs away */
+function moveNo() {
+  const no = document.getElementById("no");
+  no.style.top = Math.random() * 80 + "vh";
+  no.style.left = Math.random() * 80 + "vw";
+}
+
+/* Yes clicked */
+function yesClick() {
+  document.getElementById("message").style.display = "block";
+}
+</script>
+
+</body>
+</html>
